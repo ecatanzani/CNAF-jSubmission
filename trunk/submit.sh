@@ -16,7 +16,7 @@ compute_jobs() {
 compute_maxpend() {
     THRESHOLD_FILE=".THRESHOLD_PENDING"
     SHARPNESS=10
-    echo "1000" > $THRESHOLD_FILE
+    echo "1000" > $THRESHOLD_FILE                                          #1000 is the maximum number of pending jobs 
     MAXPEND=1000
     MAXPENDL=$MAXPEND
     MAXPENDDEC=$MAXPEND
@@ -60,6 +60,6 @@ done <${FILELIST}
 #launch last batch
 
 echo $nfiles
-if [ $nfiles -ge 1 ]; then
+if [[ $nfiles -ge 1 ]]; then
     ./submit_one_job.sh $files
 fi
