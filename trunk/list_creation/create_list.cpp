@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -21,6 +22,7 @@ int main(int argc, char* argv[]) {
   string input_dir=argv[1],path_list=argv[2],l_name=argv[3];
   vector<string> files = vector<string>();
   l_name.append(".txt",4);
+  path_list.append("/",1);
   path_list.append(l_name);
   
   /*
@@ -34,7 +36,7 @@ int main(int argc, char* argv[]) {
 
    */
 
-  ofstream mylist (path_list);
+  ofstream mylist (path_list.c_str());
   if(!mylist.is_open()) {
     cout<<"\n\n ERROR: error writing list ! \n\n";
     exit(-1);
