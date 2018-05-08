@@ -1,9 +1,9 @@
 #!/bin/sh
 
 run_exec () {
-    FILE=$1                                                           #I take argument 1 when the function "run_exec" is called and asssign that argument to "FILE" variable
+    FILELIST=$1                                                           #I take argument 1 when the function "run_exec" is called and asssign that argument to "FILE" variable
                                                                       #Argument number 1 is formed by all the files on which jobs need to run !
-    CMD="_EXEC_ .  $FILE"; echo ${CMD}; ${CMD};
+    CMD="_EXEC_ $FILELIST"; echo ${CMD}; ${CMD};
 }
 
 echo "`whoami` @ `hostname` : `pwd`"
@@ -28,10 +28,13 @@ cd $SANDBOX
 pwd
 
 FILES="_FILES_"
-for f in $FILES
-do
-    run_exec $f
-done
+#for f in $FILES
+#do
+#    run_exec $f
+#done
+echo $FILES >> ./lista.dat
+run_exec $FILES
+rm -fv lista.dat
 
 ls -altrh
 mv -v *.root _OUTDIR_

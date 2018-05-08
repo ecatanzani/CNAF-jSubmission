@@ -1,6 +1,6 @@
-#!/bin/sh      #Before bash were selected ! Are there commands tipical just for bash ??
+#!/bin/sh      
 
-FILELIST="filelist.txt"
+FILELIST="/storage/gpfs_data/dampe/users/ecatanzani/MyRepos/cnaf-jsubmission-svn/trunk/20180501.txt"
 BATCH=50                                                                   #"BATCH" sets the number of how many files evaluate together
 
 compute_free() {
@@ -36,7 +36,7 @@ nfiles=0
 while read FILE
   do
     if [[ $SUBMITTED -gt $FREE ]]; then
-        while [ $JOBS -gt $MAXPENDL ]; do                                # MAXPENDL (MAXPEND-20%) to avoid to "release" the 'wait' just for one even
+        while [ $JOBS -gt $MAXPENDL ]; do                                # MAXPENDL (MAXPEND-20%) to avoid to "release" the 'wait' just for one event
             echo "$JOBS job waiting..."
             sleep 10
             compute_jobs
