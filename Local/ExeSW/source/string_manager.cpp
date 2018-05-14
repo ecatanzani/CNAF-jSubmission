@@ -1,7 +1,7 @@
 #include "MyHead.h"
 
 void loop_on_list(char *list,std::vector<std::string> &list_vector) {
-    ifstream input_file(list);
+    std::ifstream input_file(list);
     if(!input_file.is_open()) {
         std::cerr << "\nERROR 100! File not open. The path is:\n" <<list<< "\n\n";
         exit(100);
