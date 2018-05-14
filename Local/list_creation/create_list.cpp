@@ -1,3 +1,15 @@
+////////////////////////////// C++ software to create a list of files contained in a certain input directory
+/* Arguments to provide:
+
+argv[1] --> _INDIRECTORY_ absolute path
+argv[2] --> _OUTDIRECTORY_ absolute path
+argv[3] --> _LISTNAME_ (eithout extension, it'll be added automatically)
+argv[4] (optional) --> number of files to list (if empy all files will be listed)
+ 
+ Enjoy using !!! ;-)
+
+*/
+ 
 #include <sys/types.h>
 #include <dirent.h>
 #include <errno.h>
