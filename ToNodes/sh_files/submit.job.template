@@ -21,7 +21,12 @@ echo ""
 
 HOME=`pwd`
 UNIQUE="$$_$RANDOM"
-SANDBOX=/data/$UNIQUE 
+SANDBOX=$HOME/../SandBox/$UNIQUE
+while [[ -d $SANDBOX ]]; do
+    UNIQUE="$$_$RANDOM"
+    SANDBOX=$HOME/../SandBox/$UNIQUE
+    echo "Searching for a free SandBox dir !"
+done
 mkdir -vp $SANDBOX
 cd $SANDBOX
 pwd

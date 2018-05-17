@@ -25,7 +25,7 @@ SANDBOX=$HOME/../SandBox/$UNIQUE
 while [[ -d $SANDBOX ]]; do
     UNIQUE="$$_$RANDOM"
     SANDBOX=$HOME/../SandBox/$UNIQUE
-    echo "\n\n into while loop \n\n"
+    echo "Searching for a free SandBox dir!"
 done
 mkdir -vp $SANDBOX
 cd $SANDBOX
